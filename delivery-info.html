@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wengridient</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mycss.css">
+        <script src="javascript/jquery-3.4.0.min.js"></script>
+        <script>
+                 $(document).ready(function() {
+                    $('#menubar').click(function(){
+                        let menu = document.getElementById('myLinks');
+                        if(menu.style.display == "none")
+                        {menu.style.display = "block"}
+                        else 
+                        {menu.style.display= "none"}
+                    })
+                });
+
+            </script>
+
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>Wengridient</h1>
+        </header>
+        <nav id="desktop-nav">
+                <ul >
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Product</a></li>
+                    <li><a href="howtobuy.html">How to Buy</a></li>
+                    <li><a href="announcement.html">Announcement</a></li>
+                    <li><a href="healthy-tips.html">Healthy Tips</a></li>
+                    <li><a href="recipeList.html">Recipes</a></li>
+                    <!-- <li id="dropdown-container">
+ 
+                        <a id="More">More <b>v</b></a>
+                    </li> -->
+                    <li style="float:right;background-color:black;"><a href="Wengridient.html">Wengridient Profile</a></li>
+                </ul>
+            </nav>
+        <nav id="mobile-nav">
+            <a ><h1 style="font-size:2em; color: white;">Fresh and Ready</h1></a>
+            <nav id="myLinks">
+                <a href="home.html">Home</a>
+                <a href="index.html">Product</a>
+                <a href="howtobuy.html">How to Buy</a>
+                <a href="announcement.html">Announcement</a>
+                <a href="healthy-tips.html">Healthy Tips</a>
+                <a href="recipeList.html">Recipes</a>
+                <a href="Wengridient.html" >Wengridient Profile</a>
+                
+            </nav>
+            <a id="menubar"><img class="menuLogo" src="images/howto/Menu.PNG"></a>
+        </nav>
+
+
+        <main>
+			<div class="middle home">
+				<div class="delivery">
+					<h2 style="margin: 10px 0px 10px 0px;">Delivery Information</h2>
+					<div>
+					<a href="#"><img src="images/delivery.PNG" width="350" height="200"></a>
+					</div>
+					<br>
+					<p>Especially for buyers in the Bali area free of charge. Delivery of our products is done three times a day. With the schedule as follows:</p>
+					<ol>
+						<li>06:00 AM
+						<li>11:00 AM 
+						<li>05:00 PM
+					</ol>
+					<p>All orders are one hour before the delivery schedule to be processed and sent, if more than that will be sent on the next schedule.
+                        For buyers outside Bali, extra fees will be charged according to the expedition service.
+                    </p>
+				</div>
+			</div>
+        </main>
+        <footer>
+            <small><em>Copyright &copy; 2019 Wengridient webgroup</em> </small>
+        </footer>
+        </div>
+
+    </body>
+</html>

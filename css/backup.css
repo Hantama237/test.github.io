@@ -1,0 +1,105 @@
+var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+copyTextareaBtn.addEventListener('click', function(event) {
+  var copyTextarea = document.querySelector('.js-copytextarea');
+  copyTextarea.focus();
+  copyTextarea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+});
+
+a href="mailto:childminding.butterflies@gmail.com
+?subject=Childminding%20query
+&body=Dear%20Jo,%0A%0AYour%20message%20here%0A%0ARegards,%0A%0AName:%0AEmail:%0APhone:%0A" 
+style="text-align:center;">childminding.butterflies@gmail.com</a><br /><br />
+
+var navIndex=0;
+                    var more = document.getElementById('dropdown-container');
+                    more.innerHTML =`
+                            <a>More <b>v</b></a>
+                            <div class="nav-dropdown">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            `;
+                    function showMore(){
+                        if(navIndex==0){
+                            more.innerHTML =`
+                            <a>More <b>v</b></a>
+                            <div class="nav-dropdown">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                            `;
+                            navIndex=1;
+                        } else {
+                            more.innerHTML = '<a>More <b>v</b></a>';
+                            navIndex=0;
+                        }
+<p>
+  <button class="js-textareacopybtn" style="vertical-align:top;">Copy Textarea</button>
+  <textarea class="js-copytextarea">Hello I'm some text</textarea>
+</p>
+
+header{
+    background-color: olivedrab;
+    color: black;
+    border: 1px solid #dedede;
+	padding: 10px;
+	margin: 10px;
+}
+nav ul { list-style-type: none;}
+nav a { text-decoration: none; 
+        padding-right: 10px; }
+nav li {  display: inline; }
+
+
+footer{
+    background-color: olivedrab;
+    clear: both;
+	border: 1px solid #dedede;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* body {
+    background-color: rgb(41, 210, 233);
+} */
+.container {
+    max-width: 1080px;
+    margin: 20px auto;
+    background: #cccccc;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.left{
+    width: 250px;
+    border: 1px solid #dedede;
+    background: #e5e5e5;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+.middle{
+    width: 500px;
+    border: 1px solid #dedede;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}
+.right{
+    width: 250px;
+    border: 1px solid #dedede;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+}

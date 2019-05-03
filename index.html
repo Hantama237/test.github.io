@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wengridient</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mycss.css">
+        <script src="javascript/jquery-3.4.0.min.js"></script>
+        <script src="javascript/myjs.js"></script>
+        <script>
+                    function addToCart(newElement){
+                         $("#cart").append(newElement);
+                     }
+            var totalPrice=0;
+            
+                 $(document).ready(function() {
+                    $('#menubar').click(function(){
+                        let menu = document.getElementById('myLinks');
+                        if(menu.style.display == "none")
+                        {menu.style.display = "block"}
+                        else 
+                        {menu.style.display= "none"}
+                    })
+                     //append cart
+                    $(".product-btn").click(function(){
+                        let itemNum=$(this).attr('id')
+                        
+                        if(itemNum=='i1'){alert('tobol1')}
+                        addToCart("<li>Kacang kapri Rp."+13000+",00</li>")
+                        totalPrice+=13000;
+                        var totalPriceElement=document.getElementById('totPrice');
+                        totalPriceElement.innerHTML="Total price : Rp."+totalPrice;
+                        }
+                    );
+                    //remove cart
+                   $('.cItem').click(function(){
+                       $('#cart').empty();
+                       $('#item-list').remove()
+                       totalPrice=0;
+                       var totalPriceElement=document.getElementById('totPrice');
+                       totalPriceElement.innerHTML="Total price : Rp."+totalPrice;
+                   });
+                   //Order button
+                    $('.order-btn').click( async function(){
+                        let order = ',00'+ $('#cart').text().trim();
+                        let orderFiltered =order.replace(/,00/g,"%0A%0A").replace(/\s/g,"%20")
+                        let totalCost ="%0A%0A"+$('#totPrice').text().trim().replace(/\s/g,"%20")
+                        console.log(typeof(order))
+                        let name ="%0A%0ANama:%20"+ await $('#userName:text').val().replace(/\s/g,"%20");
+                        let address="%0A%0AAlamat:%20"+ await $('#address').val().replace(/\s/g,"%20");
+                        let phoneNumber="%0A%0ANomor%20HP%20:%20"+ await $('#phoneNumber:text').val().replace(/\s/g,"%20");
+                        let coupon="%0A%0AKupon:%20"+ await $('#coupon:text').val().replace(/\s/g,"%20");
+                        console.log(orderFiltered+name+address+phoneNumber+coupon);
+                        alert('Now you will be redirected to Gmail click send to order\n and wait for confirmation calls from the owner');
+                        //for desktop 
+                        if($(this).attr('id')=='desktop'){window.location.href='https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=pratamahantama@gmail.com&subject%3DChildminding+query&body='+orderFiltered+totalCost+name+address+phoneNumber;}
+                        //for mobile
+                        else{window.location.href='mailto:pratamahantama@gmail.com?subject%3DChildminding+query&body='+orderFiltered+totalCost+name+address+phoneNumber;}
+                    })
+
+                    
+                });
+                
+            </script>
+        
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>Wengridient</h1>
+        </header>
+        <nav id="desktop-nav">
+                <ul >
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Product</a></li>
+                    <li><a href="howtobuy.html">How to Buy</a></li>
+                    <li><a href="announcement.html">Announcement</a></li>
+                    <li><a href="healthy-tips.html">Healthy Tips</a></li>
+                    <li><a href="recipeList.html">Recipes</a></li>
+                    <!-- <li id="dropdown-container">
+ 
+                        <a id="More">More <b>v</b></a>
+                    </li> -->
+                    <li style="float:right;background-color:black;"><a href="Wengridient.html">Wengridient Profile</a></li>
+                </ul>
+            </nav>
+        <nav id="mobile-nav">
+            <a ><h1 style="font-size:2em; color: white;">Fresh and Ready</h1></a>
+            <nav id="myLinks">
+                <a href="home.html">Home</a>
+                <a href="index.html">Product</a>
+                <a href="howtobuy.html">How to Buy</a>
+                <a href="announcement.html">Announcement</a>
+                <a href="healthy-tips.html">Healthy Tips</a>
+                <a href="recipeList.html">Recipes</a>
+                <a href="Wengridient.html" >Wengridient Profile</a>
+                
+            </nav>
+            <a id="menubar"><img class="menuLogo" src="images/howto/Menu.PNG"></a>
+        </nav>
+            
+            
+        <main>
+            
+            <div class="top">
+                <div class="top-left">
+                    <h3 >Category</h3>
+                    <ul id="category">
+                        <li class="category-li" id="vegetables"><a class="first" id='vegetA'>Vegetables</a></li>
+                        <li class="category-li" id="fruits"><a id="fruitA">Fruits</a></li>
+                        <li class="category-li" id="bean"><a id="beanA">Beans</a></li>
+                        <li class="category-li" id="seasonings"><a id="seasonA" class="last">Spice & Seasonig</a></li>
+                    </ul>
+                    <h3>Your Cart <button class='cItem' id='cItemasd'>Clear</button></h3>
+                    
+                    <ul id="cart">
+                        
+                    </ul>
+                    <div class="total-price" id="totPrice">
+                        Total price : Rp.0
+                    </div>
+                    <div class="form-container">
+                        <form>
+                        <input type="text" id="userName" name="name" placeholder="Name">
+                        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" >
+                        <textarea type="text" id="address" name="address" placeholder="Address" ></textarea>
+                        <input type="text" id="coupon" placeholder="Coupon(Optional)">
+                        </form>
+                    </div>
+                    <div class="btn-container">
+                        <button class="order-btn" id="mobile">Order now</button>
+                        <button class="order-btn" id="desktop">Order now</button>
+                    </div>
+                </div>
+                <!-- <div class="top-right">
+
+                </div> -->
+            </div>
+            
+            <div class="middle" id="mid">
+                <table id="item-list">
+                        <script>
+                                var a=1;
+                                var newElement=`<button id='clear-table' style='display:none;'></button><table>`;
+                                var itemList;
+                                $(document).ready(function(){
+
+                                    $('.category-li').on('click',function(){
+                                        $('#clear-table').trigger('click')
+                                        newElement=`<button id='clear-table' style='display:none;'></button><table>`;
+                                    
+                                    if($(this).attr('id')=='vegetables'){
+                                        newElement='<h3 id="list-label">Vegetables Products</h3>'+newElement;
+                                        $('#vegetA').addClass('active')
+                                        $('#beanA, #seasonA, #fruitA').removeClass('active');
+                                        itemList=vegeList}
+                                    if($(this).attr('id')=='seasonings'){
+                                        newElement='<h3 id="list-label">Spices & Seasonings Products</h3>'+newElement;
+                                        $('#seasonA').addClass('active')
+                                        $('#beanA, #vegetA, #fruitA').removeClass('active');
+                                        itemList=seasoningList
+                                    }
+                                    else if($(this).attr('id')=='fruits'){
+                                        newElement='<h3 id="list-label">Fruits Products</h3>'+newElement;  
+                                        $('#fruitA').addClass('active')
+                                        $('#beanA, #seasonA, #vegetA').removeClass('active');  
+                                        itemList=fruitList;
+                                    }
+                                    else if($(this).attr('id')=='bean') {
+                                        newElement='<h3 id="list-label">Beans Products</h3>'+newElement;  
+                                        $('#beanA').addClass('active')
+                                        $('#fruitA, #seasonA, #vegetA').removeClass('active');  
+                                        itemList=beanList;}
+                                    itemList.forEach(function(item){
+                                        if(a==1){
+                                            newElement+=`
+                                            <tr class='item-list'>
+                                            <td>
+                                                <div class='cont-hover'>
+                                                    <div class='product-container'>
+                                                        <div class='img-container'>
+                                                            <a href='productDetails.html?id=${item.id}'><img class='product-img' src=${item.imgUri}></a>
+                                                        </div>
+                                                            <div class='product-name'><b >${item.name} <br></b></div>
+                                                        <div class='product-description'>Rp.${item.price}</div>
+                                                        <div class='btn-container'>
+                                                            <button class='product-btn' id=${item.id}>Add to Cart</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            `
+                                        }
+                                        else if(a==3){
+                                            newElement+=`
+                                            <td>
+                                                <div class='cont-hover'>
+                                                    <div class='product-container'>
+                                                        <div class='img-container'>
+                                                            <a href='productDetails.html?id=${item.id}'><img class='product-img' src=${item.imgUri}></a>
+                                                        </div>
+                                                            <div class='product-name'><b >${item.name} <br></b></div>
+                                                        <div class='product-description'>Rp.${item.price}</div>
+                                                        <div class='btn-container'>
+                                                            <button class='product-btn' id=${item.id}>Add to Cart</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            </tr>
+                                            `;
+                                            a=0;
+                                        }
+                                        else{
+                                            newElement+=`
+                                            <td>
+                                                <div class='cont-hover'>
+                                                    <div class='product-container'>
+                                                        <div class='img-container'>
+                                                            <a href='productDetails.html?id=${item.id}'><img class='product-img' src=${item.imgUri}></a>
+                                                        </div>
+                                                            <div class='product-name'><b >${item.name} <br></b></div>
+                                                        <div class='product-description'>Rp.${item.price}</div>
+                                                        <div class='btn-container'>
+                                                            <button class='product-btn' id=${item.id}>Add to Cart</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            `
+                                        }
+                                        a++;
+                                       
+                                        
+                                    })
+                                    
+                                    
+                                    //console.log(newElement);
+                                    newElement+=`</tr></table>`
+                                    $('#mid').append(newElement)
+                                    console.log(a)
+                                    a=1;
+                                });
+                                $(document).on("click", ".product-btn" , function() {
+                                        let item;
+                                        for(i=0;i<itemList.length;i++){
+                                            if(itemList[i].id==$(this).attr('id')){
+                                                item=itemList[i]
+                                            }
+                                        }
+                                        console.log(item.id);
+                                        
+                                        addToCart("<li>"+item.name+" Rp."+item.price+",00</li>")
+                                        totalPrice+=item.price;
+                                        var totalPriceElement=document.getElementById('totPrice');
+                                        totalPriceElement.innerHTML="Total price : Rp."+totalPrice;
+                        
+                                    });
+                                    $(document).on("click","#clear-table",function(){
+                                        $(this).parent().empty();
+                                    })
+                                $('#vegetables').trigger('click')
+                                
+                                })
+                            </script>
+                </table>
+            </div>
+           
+        </main>
+        <footer>
+            <small><em>Copyright &copy; 2019 Wengridient webgroup</em> </small>
+        </footer>
+        </div>
+        
+    </body>
+</html>

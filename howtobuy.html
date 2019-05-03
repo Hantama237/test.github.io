@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wengridient</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mycss.css">
+        <script src="javascript/jquery-3.4.0.min.js"></script>
+        <script src="javascript/myjs.js"></script>
+        <script>
+                    function addToCart(newElement){
+                         $("#cart").append(newElement);
+                     }
+            var totalPrice=0;
+            
+                 $(document).ready(function() {
+                    $('#menubar').click(function(){
+                        let menu = document.getElementById('myLinks');
+                        if(menu.style.display == "none")
+                        {menu.style.display = "block"}
+                        else 
+                        {menu.style.display= "none"}
+                    })
+                });
+                
+            </script>
+        
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>Wengridient</h1>
+        </header>
+        <nav id="desktop-nav">
+                <ul >
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Product</a></li>
+                    <li><a href="howtobuy.html">How to Buy</a></li>
+                    <li><a href="announcement.html">Announcement</a></li>
+                    <li><a href="healthy-tips.html">Healthy Tips</a></li>
+                    <li><a href="recipeList.html">Recipes</a></li>
+                    <!-- <li id="dropdown-container">
+ 
+                        <a id="More">More <b>v</b></a>
+                    </li> -->
+                    <li style="float:right;background-color:black;"><a href="Wengridient.html">Wengridient Profile</a></li>
+                </ul>
+            </nav>
+        <nav id="mobile-nav">
+            <a ><h1 style="font-size:2em; color: white;">Fresh and Ready</h1></a>
+            <nav id="myLinks">
+                <a href="home.html">Home</a>
+                <a href="index.html">Product</a>
+                <a href="howtobuy.html">How to Buy</a>
+                <a href="announcement.html">Announcement</a>
+                <a href="healthy-tips.html">Healthy Tips</a>
+                <a href="recipeList.html">Recipes</a>
+                <a href="Wengridient.html" >Wengridient Profile</a>
+                
+            </nav>
+            <a id="menubar"><img class="menuLogo" src="images/howto/Menu.PNG"></a>
+        </nav>
+            
+        <main>
+            <div class="middle midi" id="mid-howtobuy">
+                <h2><strong>How To Buy</strong></h2>
+                <div class="step-container">
+                    <h3>Step 1 : Category and Cart</h3>
+                    <div class="step-image">
+                        <img src="images/howto/Category.PNG">
+                    </div>
+                    <div class="step-text">
+                        <p>First you have to go to <a class="green-anchor" href="index.html">Products</a> page. And then choose the product <b>Category</b> by clicking on the catergory bar similar to the picture above</b></p>
+                    </div>
+                    <div class="step-image">
+                        <img src="images/howto/Capture.PNG">
+                    </div>
+                    <div class="step-image" style="margin-left: 100px; background-color: azure; max-width: 290px;">
+                            <img src="images/howto/Cart.PNG" >
+                        </div>
+                    <div class="step-text">
+                        <p>And then just click the <b>Add to Cart</b> button of the product that you want to add it to your <b>Cart</b></p>
+                    </div>
+                </div>
+
+                <div class="step-container">
+                    <h3>Step 2 : Filling Forms and Order products
+                
+                    </h3>
+                    <div class="step-image">
+                        <img src="images/howto/Order.PNG">
+                    </div>
+                    <div class="step-text">
+                        <p>Before you click the <b>Order Now</b> button make sure you have fill up the required form like Name, Address, and Phone Number correctly. Whenever you're done selecting the product and then you just need to click the <b>order now</b> button</p>
+                    </div>
+                    <div class="step-image">
+                        <img src="images/howto/PopUp.PNG" class="popUp" >
+                    </div>
+                    
+                    <div class="step-text">
+                        <p>And there would be a <b>Pop up</b> showing a message to click Send in the gmail page and wait for the Wengridient owner confirmation, just click <b>Ok</b> and you will be redirected to <a href="https://gmail.com" class="green-anchor"><b>Gmail.</b></a></p>
+                    </div>
+                </div>
+                <div class="step-container">
+                    <h3>Step 3 : Sending order email, Owner confirmation, and Payment</h3>
+                    <div class="step-image" style="max-width:800px; margin-right: 30px;">
+                        <img src="images/howto/Gmail.PNG" >
+                    </div>
+                    <div class="step-text">
+                        <p>After you clicking the <b>Order Now</b> button you will redirected to gmail and the text body and receiver will be filled <b>automaticaly</b>, You can add some notes to the message or edit your data before clicking <b>SEND</b></p>
+                    </div>
+                    <div class="step-text">
+                        <p>After you click the send button please wait for <b>Confirmation</b> calls or email by the Wengridient owner about the delivery and the total price if there is a <b>discount</b> when you order</p>
+                    </div>
+                    <div class="step-text">
+                            <p>And the payment will be also confirmed after the owner confirm your order by calls or email, usually the payment is using <b>Transfer</b> or <b>Cost on Delivery</b>,COD methos is only available after you have a valid personal data gived to the Wengridient</p>
+                            <p>You can check about the <b>Delivery</b> info at <a href="home.html" class="green-anchor"><b>Wengridient Home page</b></a></p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </main>
+        <footer>
+            <small><em>Copyright &copy; 2019 Wengridient webgroup</em> </small>
+        </footer>
+        </div>
+        
+    </body>
+</html>

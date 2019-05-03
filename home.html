@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wengridient</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/mycss.css">
+        <script src="javascript/jquery-3.4.0.min.js"></script>
+        <script>
+                 $(document).ready(function() {
+
+                    $('#menubar').click(function(){
+                        let menu = document.getElementById('myLinks');
+                        if(menu.style.display == "none")
+                        {menu.style.display = "block"}
+                        else 
+                        {menu.style.display= "none"}
+                    })
+                });
+
+            </script>
+
+    </head>
+    <body>
+        <div class="container">
+        <header>
+            <h1>Wengridient</h1>
+        </header>
+        <nav id="desktop-nav">
+                <ul >
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Product</a></li>
+                    <li><a href="howtobuy.html">How to Buy</a></li>
+                    <li><a href="announcement.html">Announcement</a></li>
+                    <li><a href="healthy-tips.html">Healthy Tips</a></li>
+                    <li><a href="recipeList.html">Recipes</a></li>
+                    <!-- <li id="dropdown-container">
+ 
+                        <a id="More">More <b>v</b></a>
+                    </li> -->
+                    <li style="float:right;background-color:black;"><a href="Wengridient.html">Wengridient Profile</a></li>
+                </ul>
+            </nav>
+        <nav id="mobile-nav">
+            <a ><h1 style="font-size:2em; color: white;">Fresh and Ready</h1></a>
+            <nav id="myLinks">
+                <a href="home.html">Home</a>
+                <a href="index.html">Product</a>
+                <a href="howtobuy.html">How to Buy</a>
+                <a href="announcement.html">Announcement</a>
+                <a href="healthy-tips.html">Healthy Tips</a>
+                <a href="recipeList.html">Recipes</a>
+                <a href="Wengridient.html" >Wengridient Profile</a>
+                
+            </nav>
+            <a id="menubar"><img class="menuLogo" src="images/howto/Menu.PNG"></a>
+        </nav>
+
+        <main>
+			<div class="middle home">
+				<div class="features">
+					<div class="left">
+						
+						<a href="#"><img class="features-img logo" src="images/logo.PNG"></a>
+                    </div>
+                    <div class="right text">
+                        <h2>What is Wengridient</h2>
+						<p>We are a business entity that sells daily food products and also daily delivery services for our products. Our vision makes it easy for communities or organizations to meet their needs.</p>
+						<a href="Wengridient.html"><button  class="read-btn">read more</button></a>
+					</div>
+				</div>
+				<div class="features">
+					<div class="right">
+							<a href="#"><img class="features-img" src="images/field.PNG" ></a>
+					</div>
+					<div class="left">
+						<h2 style="margin-bottom:10px;">Our Products Are Guaranteed Organic</h2>
+						<p> Our products are guaranteed organic, all products we sell are guaranteed organic and of high quality. We always keep the soil in our fields free of chemical fertilizers and guarantee that people are 100% organic and fresh every day.</p>
+						<a href="Why-organic.html"><button class="read-btn">Why organic?</button></a>
+					</div>
+				</div>
+				<div class="features">
+					<div class="left">
+						
+							<a href="#"><img class="features-img logo" src="images/delivery.PNG"></a>
+					</div>
+					<div class="right text">
+                            <h2 style="margin-bottom:10px;">Daily Delivery</h2>
+						<p>Our services to work on all the products you buy directly to your home or location. We make our own shipments so that the safety and quality of products are maintained.</p>
+						<a href="delivery-info.html"><button class="read-btn">delivery info</button></a>
+					</div>
+				</div>
+			</div>
+        </main>
+        <footer>
+            <small><em>Copyright &copy; 2019 Wengridient webgroup</em> </small>
+        </footer>
+        </div>
+
+    </body>
+</html>
