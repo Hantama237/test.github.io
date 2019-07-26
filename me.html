@@ -9,11 +9,11 @@
     <body>
         <div class="container">
             <header>
-                <div id="me" style=""><a href="me.html" style="text-align: right;">About Me</a></div>
+                <div id="me" ><a href="me.html" style="text-align: right;">About Me</a></div>
                 <div style="width: 45%"><h1>Hantama's Blog</h1></div>
                 
                 <ul>
-                    <li><a class="active" href="#">Home</a></li>
+                    <li><a class="active" href="index.html">Home</a></li>
                     <div class="dropdown">
                             <button class="dropbtn">Category List
                             </button>
@@ -26,28 +26,18 @@
                 </ul>
             </header>
             <main id="main">
-                
+                <h2>Hi My Name is Hantama :)</h2>
+                <div id="profile-pic">
+                    <img id="profile-pic" src="assets/img/me.jpg" alt="me" width="0%">
+                </div>
+                <p>I Love Coding find me on <a class='link' href="https://github.com/Hantama237">Github</a></p>
             </main>
         </div>
         <footer>
 
         </footer>
         <script>
-            let renderedString=""
-            let index=0
-            categoryList.forEach(category => {
-                renderedString+="<a href='list-by-category.html?category="+category+"'>"+category+"</a>"
-            });
-            document.getElementById('categories').innerHTML=renderedString
-            renderedString="<h1 style='text-align:Left; margin-top:10px; padding-bottom:10px; border-bottom:4px solid #000000; width:auto;'>Recent Posts</h1>"
-            postList.forEach(post => {
-                renderedString+="<a href='post.html?id="+
-                                index+"'><div  class='postls'>"+
-                                post.getTitle()+""+
-                                post.getDescription()+"</div></a>"
-                index++
-            });
-            document.getElementById("main").innerHTML=renderedString//ReactNative.getPost()
+            
         </script>
     </body>
 </html>
